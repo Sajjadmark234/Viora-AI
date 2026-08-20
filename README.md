@@ -6,7 +6,6 @@ st.set_page_config(page_title="Viora AI Assistant", page_icon="🤖")
 st.title("🤖 Viora AI Assistant")
 st.write("Welcome! Yeh aapka apna AI app hai.")
 
-# Sidebar mein API key dalne ka option taake saaf nazar aaye
 st.sidebar.header("Settings")
 api_key = st.sidebar.text_input("Enter Gemini API Key:", type="password")
 
