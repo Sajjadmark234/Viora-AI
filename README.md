@@ -4,10 +4,11 @@ import google.generativeai as genai
 st.set_page_config(page_title="Viora AI Assistant", page_icon="🤖")
 
 st.title("🤖 Viora AI Assistant")
-st.write("Welcome! Yeh aapka apna AI app hai jo Gemini se powered hai.")
+st.write("Welcome! Yeh aapka apna AI app hai.")
 
-# Gemini API Key input
-api_key = st.text_input("Enter your Gemini API Key:", type="password")
+# Sidebar mein API key dalne ka option taake saaf nazar aaye
+st.sidebar.header("Settings")
+api_key = st.sidebar.text_input("Enter Gemini API Key:", type="password")
 
 if api_key:
     genai.configure(api_key=api_key)
@@ -27,4 +28,5 @@ if api_key:
         else:
             st.warning("Pehle kuch type karein!")
 else:
-    st.info("Kripya apna Gemini API key enter karein taake app chalu ho sake.")
+    st.sidebar.warning("Pehle apni API Key enter karein!")
+    st.info("👈 Left side (Sidebar) mein apni Gemini API Key enter karein taake app chal sake.")
